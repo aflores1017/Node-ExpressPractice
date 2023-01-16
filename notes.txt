@@ -1,0 +1,39 @@
+Exporting variables using module
+const names = require("./4-names")
+const sayHi = require("./5-utis")
+console.log(names)
+console.log(sayHi)
+sayHi("Angelo")
+sayHi(names.john)
+sayHi(names.peter)
+
+const sayHi = (name)=>{
+    console.log(`Hello there ${name}`)
+}
+module.exports= sayHi
+
+//Local
+const john = "john"
+//share
+const peter = "Peter"
+const secret = `Super Secret`
+module.exports = {john,peter}
+
+console.log(module)
+
+module.exports.items = ["items1","items2","items3","items4"]
+const person = {
+    name:'Angelo',
+}
+
+module.exports.singlePerson = person;
+
+Executing function called in seperate file
+require("./7-mindGrenade")
+const num1 = 5
+const num2 = 10
+
+function addNums(){
+    console.log(`the sum is ${num1 + num2}`);
+}
+addNums()
